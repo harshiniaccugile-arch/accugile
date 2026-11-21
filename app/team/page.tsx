@@ -26,7 +26,7 @@ export default function TeamPage() {
             <PeopleDevelopment />
             <Continuity />
             <QualitySecurity n="06" bg="#F7F8FB" />
-            <GlobalDelivery />
+
             <StatsStrip padding="0 0 96px" />
             <TeamCTA />
         </PageShell>

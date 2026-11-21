@@ -32,7 +32,7 @@ export default function AboutPage() {
             <Leadership />
             <Industries />
             <DeliveryApproach />
-            <GlobalDelivery />
+
             <Comparison />
             <QualitySecurity />
 

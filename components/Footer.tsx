@@ -9,7 +9,7 @@ export default function Footer() {
                 <div className="ft-top">
                     <div className="ft-brand">
                         <L href="/" aria-label="Accugile home" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, color: '#0F172A' }}>
-                            <Image src="/assets/Accugile-Logo-Primary.png" alt="Accugile" width={250} height={60} style={{ display: 'block', height: 48, width: 'auto' }} />
+                            <Image src="/assets/Accugile-Logo-Primary.png" alt="Accugile" width={300} height={80} style={{ display: 'block', height: 80, width: 'auto' }} />
                         </L>
                         <p>Full-stack development and digital agency. One accountable in-house team for AI, software, eCommerce and brand growth.</p>
                         <p>Coimbatore, Tamil Nadu, India</p>

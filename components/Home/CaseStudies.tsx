@@ -2,9 +2,9 @@ import Image from 'next/image';
 import L from './Link';
 
 const cases = [
-    { bg: '#EEF1FF', img: '/case_studies/kb.png', meta: 'K-Beauty · Luxury · eCommerce · Shopify', h: '[Shopify to WooCommerce migration for a D2C brand]', l: '[conversion rate after launch]' },
-    { bg: '#EAF4EE', img: '/case_studies/Seiquerce.png', meta: '[Client] · Marketplace · Laravel + React', h: '[Multivendor marketplace built from scratch]', l: '[vendors onboarded in 90 days]' },
-    { bg: '#EAF4EE', img: '/case_studies/Vinchase.png', meta: '[Client] · Marketplace · Laravel + React', h: '[Multivendor marketplace built from scratch]', l: '[vendors onboarded in 90 days]' },
+    { bg: '#EEF1FF', img: '/case_studies/cs1.png', meta: 'Wordpress', h: 'kb&co', l: '' },
+    { bg: '#EAF4EE', img: '/case_studies/cs2.png', meta: 'e-commerce', h: 'Vinchase', l: '[vendors onboarded in 90 days]' },
+    { bg: '#EAF4EE', img: '/case_studies/cs3.png', meta: 'e-commerce', h: 'Seiquerce', l: '[vendors onboarded in 90 days]' },
 ];
 
 export default function CaseStudies() {

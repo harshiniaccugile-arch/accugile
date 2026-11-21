@@ -39,9 +39,9 @@ export default function ServicesPage() {
             <EngagementModels />
             <CompareTable />
             <QualitySecurity />
-            <FeaturedEngagement tag="[Client] · [Industry] · Services" />
+
             <ServiceFaq faqs={commonFaqs} />
-            <RelatedReading items={serviceReading} />
+
             <StatsStrip padding="0 0 96px" />
             <PartnersCTA />
         </PageShell>
