@@ -27,9 +27,9 @@ export default function Home() {
       <AISection />
       <Products />
       <TechStack />
-      <CaseStudies />
-      <Process />
       <Engagement />
+      <Process />
+
       <Testimonials />
       <Contact />
       <Footer />

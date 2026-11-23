@@ -622,6 +622,626 @@ export const CASE_STUDIES: Record<string, CaseStudyData> = {
         ]
       }
     ]
+  },
+  "aarhus-cloudworks": {
+    "slug": "aarhus-cloudworks",
+    "title": "How Accugile’s Dedicated Developers Helped Aarhus Cloudworks Ship 50% Faster",
+    "subtitle": "Three senior Accugile engineers joined Aarhus Cloudworks’ in-house product team, became productive within two weeks, and helped increase delivery speed by about 50% while keeping code quality high.",
+    "breadcrumbTitle": "Aarhus Cloudworks",
+    "chips": [
+      "Case Study",
+      "B2B cloud software",
+      "Denmark"
+    ],
+    "glance": {
+      "client": "Aarhus Cloudworks A/S",
+      "letter": "A",
+      "items": [
+        {
+          "label": "Engagement",
+          "value": "Dedicated team model, integrated into the client’s engineering organisation"
+        },
+        {
+          "label": "Duration",
+          "value": "Started with 3 engineers; ongoing for 2+ years"
+        },
+        {
+          "label": "Team",
+          "value": "3 dedicated engineers: Senior Backend (Go), Senior Full-Stack (React/Go), Full-Stack, with Delivery Manager"
+        },
+        {
+          "label": "Services",
+          "value": "Dedicated development team, onboarding, engineering management support, code review, QA and DevOps"
+        },
+        {
+          "label": "Technologies",
+          "value": "Go, React, TypeScript, PostgreSQL, Kubernetes, Terraform, Google Cloud"
+        },
+        {
+          "label": "Working hours",
+          "value": "Four hours of daily overlap with Central European Time, including all standups and planning"
+        }
+      ]
+    },
+    "heroStats": [
+      {
+        "value": "2 weeks",
+        "label": "to first production release"
+      },
+      {
+        "value": "~50%",
+        "label": "faster delivery"
+      },
+      {
+        "value": "0",
+        "label": "engineer turnover"
+      },
+      {
+        "value": "-38%",
+        "label": "lead time per change"
+      }
+    ],
+    "tocItems": [],
+    "contentHtml": "",
+    "moreStudies": []
+  },
+  "baltic-pulse-analytics": {
+    "slug": "baltic-pulse-analytics",
+    "title": "How Accugile Took Baltic Pulse Analytics from Idea to Working SaaS MVP in Ten Weeks",
+    "subtitle": "A focused MVP with a dashboard the first twenty customers used without training, built by cutting the feature list to what mattered, and live in time for the company's seed round demo.",
+    "breadcrumbTitle": "Baltic Pulse Analytics",
+    "chips": [
+      "Retail and eCommerce Analytics",
+      "SaaS MVP",
+      "Poland"
+    ],
+    "glance": {
+      "client": "Baltic Pulse Analytics Sp. z o.o.",
+      "letter": "B",
+      "items": [
+        {
+          "label": "Engagement",
+          "value": "Fixed-scope MVP build followed by a product development partnership"
+        },
+        {
+          "label": "Duration",
+          "value": "10 weeks to MVP, ongoing development after funding"
+        },
+        {
+          "label": "Team",
+          "value": "5-person team: PM, UI/UX Designer, 2 Full-Stack Engineers, QA Engineer"
+        },
+        {
+          "label": "Services",
+          "value": "Product discovery, scope definition, UX/UI, SaaS development, integrations, DevOps"
+        },
+        {
+          "label": "Technologies",
+          "value": "Next.js, TypeScript, Node.js, PostgreSQL, Prisma, Inngest, Vercel, AWS"
+        },
+        {
+          "label": "Integrations",
+          "value": "Shopify, WooCommerce, Google Analytics 4, Meta Ads, Stripe, Slack"
+        }
+      ]
+    },
+    "heroStats": [
+      {
+        "value": "10 wks",
+        "label": "from idea to live MVP"
+      },
+      {
+        "value": "20",
+        "label": "paying pilot customers"
+      },
+      {
+        "value": "0",
+        "label": "training sessions needed"
+      },
+      {
+        "value": "€1.8M",
+        "label": "seed round closed"
+      }
+    ],
+    "tocItems": [],
+    "contentHtml": "",
+    "moreStudies": [
+      {
+        "slug": "aarhus-cloudworks",
+        "title": "How Accugile's Dedicated Developers Helped Aarhus Cloudworks Ship 50% Faster",
+        "desc": "Three senior Accugile engineers joined Aarhus Cloudworks' in-house product team, became productive within two weeks, and helped increase delivery speed by about 50% while keeping code quality high.",
+        "tags": [
+          "Dedicated Team",
+          "Go & React",
+          "Denmark"
+        ]
+      },
+      {
+        "slug": "medsoft",
+        "title": "Engineering Partner for Medsoft's Healthcare Workflow Platform",
+        "desc": "How Accugile helped Medsoft replace a fragile legacy monolith with a fast, secure, cloud-native platform, with zero downtime for the clinics that depend on it every day.",
+        "tags": [
+          "Healthcare / HealthTech",
+          "Cloud Modernization",
+          "Dedicated Pod"
+        ]
+      },
+      {
+        "slug": "accudemy",
+        "title": "How Accugile Built a Custom LMS That Scales Teaching and Revenue for Accudemy",
+        "desc": "A branded, automated learning platform that turned a content-led online learning company into a scalable EdTech business.",
+        "tags": [
+          "EdTech / Online Learning",
+          "Custom LMS & Commerce",
+          "United States"
+        ]
+      }
+    ]
+  },
+  "cascadia-cloud-services": {
+    "slug": "cascadia-cloud-services",
+    "title": "How Accugile Connected Stripe Billing to HubSpot for Cascadia Cloud Services",
+    "subtitle": "A webhook-driven integration with retry logic and a monitoring dashboard, so sales and support see account and payment status instantly, customer success learns about failed payments before the customer does, and collections have improved.",
+    "breadcrumbTitle": "Cascadia Cloud Services",
+    "chips": [
+      "B2B Cloud Hosting",
+      "CRM Integration",
+      "Canada"
+    ],
+    "glance": {
+      "client": "Cascadia Cloud Services Ltd.",
+      "letter": "C",
+      "items": [
+        {
+          "label": "Engagement",
+          "value": "Fixed-scope integration project followed by monitoring and support"
+        },
+        {
+          "label": "Duration",
+          "value": "10 weeks to go-live, ongoing monitoring"
+        },
+        {
+          "label": "Team",
+          "value": "4-person team: Integration Architect, 2 Backend Engineers, QA Engineer"
+        },
+        {
+          "label": "Services",
+          "value": "Process mapping, integration architecture, webhook development, HubSpot configuration, monitoring"
+        },
+        {
+          "label": "Technologies",
+          "value": "Node.js, TypeScript, AWS Lambda, Amazon SQS, DynamoDB, Grafana"
+        },
+        {
+          "label": "Integrations",
+          "value": "Stripe Billing, HubSpot CRM / Sales Hub / Service Hub, Slack, Zendesk"
+        }
+      ]
+    },
+    "heroStats": [
+      {
+        "value": "< 30 s",
+        "label": "Stripe to HubSpot sync"
+      },
+      {
+        "value": "-41%",
+        "label": "overdue receivables"
+      },
+      {
+        "value": "54%",
+        "label": "failed payments resolved before customer contacts support"
+      },
+      {
+        "value": "99.9%",
+        "label": "events processed first time"
+      }
+    ],
+    "tocItems": [],
+    "contentHtml": "",
+    "moreStudies": [
+      {
+        "slug": "aarhus-cloudworks",
+        "title": "How Accugile's Dedicated Developers Helped Aarhus Cloudworks Ship 50% Faster",
+        "desc": "Three senior Accugile engineers joined Aarhus Cloudworks' in-house product team and helped increase delivery speed by about 50%.",
+        "tags": [
+          "Dedicated Team",
+          "Go & React",
+          "Denmark"
+        ]
+      },
+      {
+        "slug": "medsoft",
+        "title": "Engineering Partner for Medsoft's Healthcare Workflow Platform",
+        "desc": "How Accugile helped Medsoft replace a fragile legacy monolith with a fast, secure, cloud-native platform.",
+        "tags": [
+          "Healthcare / HealthTech",
+          "Cloud Modernization",
+          "Dedicated Pod"
+        ]
+      },
+      {
+        "slug": "baltic-pulse-analytics",
+        "title": "How Accugile Took Baltic Pulse Analytics from Idea to Working SaaS MVP in Ten Weeks",
+        "desc": "A focused MVP with a dashboard the first twenty customers used without training, live in time for the seed round demo.",
+        "tags": [
+          "SaaS MVP",
+          "Retail Analytics",
+          "Poland"
+        ]
+      }
+    ]
+  },
+  "gujarat-agro-distributors": {
+    "slug": "gujarat-agro-distributors",
+    "title": "How Accugile Replaced Email and Spreadsheets with a Laravel Operations System for Gujarat Agro Distributors",
+    "subtitle": "One Laravel application for orders, stock and delivery scheduling, with dashboards for management and a simple mobile view for field staff, built in the company's own terminology so adoption was quick and order errors fell sharply.",
+    "breadcrumbTitle": "Gujarat Agro Distributors",
+    "chips": [
+      "Agricultural Distribution",
+      "Custom Web Application",
+      "India"
+    ],
+    "glance": {
+      "client": "Gujarat Agro Distributors Pvt Ltd",
+      "letter": "G",
+      "items": [
+        {
+          "label": "Engagement",
+          "value": "Fixed-scope build followed by an annual support and enhancement plan"
+        },
+        {
+          "label": "Duration",
+          "value": "6 months to full rollout across all depots"
+        },
+        {
+          "label": "Team",
+          "value": "5-person team: PM, Business Analyst, 2 Laravel Engineers, QA Engineer"
+        },
+        {
+          "label": "Services",
+          "value": "Process mapping, UX design, custom web development, mobile web, reporting, data migration, training"
+        },
+        {
+          "label": "Technologies",
+          "value": "Laravel, PHP 8.2, Livewire, MySQL, Redis, Progressive Web App, AWS Mumbai"
+        },
+        {
+          "label": "Integrations",
+          "value": "Tally Prime, GST e-invoicing / e-way bills, WhatsApp Business API, SMS, Google Maps"
+        }
+      ]
+    },
+    "heroStats": [
+      {
+        "value": "-82%",
+        "label": "order errors"
+      },
+      {
+        "value": "4",
+        "label": "depots on one system"
+      },
+      {
+        "value": "2 wks",
+        "label": "to full staff adoption"
+      },
+      {
+        "value": "0",
+        "label": "lost shipments since launch"
+      }
+    ],
+    "tocItems": [],
+    "contentHtml": "",
+    "moreStudies": [
+      {
+        "slug": "cascadia-cloud-services",
+        "title": "How Accugile Connected Stripe Billing to HubSpot for Cascadia Cloud Services",
+        "desc": "A webhook-driven integration with retry logic and a monitoring dashboard, so sales and support see account and payment status instantly.",
+        "tags": [
+          "CRM Integration",
+          "B2B SaaS",
+          "Canada"
+        ]
+      },
+      {
+        "slug": "medsoft",
+        "title": "Engineering Partner for Medsoft's Healthcare Workflow Platform",
+        "desc": "How Accugile helped Medsoft replace a fragile legacy monolith with a fast, secure, cloud-native platform.",
+        "tags": [
+          "Healthcare / HealthTech",
+          "Cloud Modernization",
+          "Dedicated Pod"
+        ]
+      },
+      {
+        "slug": "accudemy",
+        "title": "How Accugile Built a Custom LMS That Scales Teaching and Revenue for Accudemy",
+        "desc": "A branded, automated learning platform that turned a content-led online learning company into a scalable EdTech business.",
+        "tags": [
+          "EdTech / Online Learning",
+          "Custom LMS & Commerce",
+          "United States"
+        ]
+      }
+    ]
+  },
+  "hanseatisch-handwerk": {
+    "slug": "hanseatisch-handwerk",
+    "title": "How Accugile Built a Trusted Trades Marketplace with Protected Payments for Hanseatisch Handwerk",
+    "subtitle": "A two-sided marketplace that matches homeowners with vetted tradespeople, holds payments until the job is confirmed, and supports milestone billing for larger projects, so both sides can trust every transaction.",
+    "breadcrumbTitle": "Hanseatisch Handwerk",
+    "chips": [
+      "Two-Sided Marketplace",
+      "Protected Payments",
+      "Germany"
+    ],
+    "glance": {
+      "client": "Hanseatisch Handwerk GmbH",
+      "letter": "H",
+      "items": [
+        {
+          "label": "Engagement",
+          "value": "Long-term product partnership with a dedicated marketplace team"
+        },
+        {
+          "label": "Duration",
+          "value": "9 months to launch in Hamburg, ongoing development and expansion"
+        },
+        {
+          "label": "Team",
+          "value": "6-person team: PM, UI/UX Designer, 2 Backend Engineers, Frontend/Mobile Engineer, QA"
+        },
+        {
+          "label": "Services",
+          "value": "Product discovery, marketplace design, web and mobile development, payments and compliance, QA automation, DevOps"
+        },
+        {
+          "label": "Technologies",
+          "value": "Laravel, Vue.js (Nuxt), Flutter, PostgreSQL, Redis, Meilisearch, AWS Frankfurt"
+        },
+        {
+          "label": "Integrations",
+          "value": "Stripe Connect, SEPA Direct Debit, DATEV export, Twilio SMS, Google Maps"
+        }
+      ]
+    },
+    "heroStats": [
+      {
+        "value": "€9.4M",
+        "label": "job value processed in year one"
+      },
+      {
+        "value": "1,850",
+        "label": "vetted tradespeople"
+      },
+      {
+        "value": "0.6%",
+        "label": "jobs ending in dispute"
+      },
+      {
+        "value": "4.8 / 5",
+        "label": "average job rating"
+      }
+    ],
+    "tocItems": [],
+    "contentHtml": "",
+    "moreStudies": [
+      {
+        "slug": "gujarat-agro-distributors",
+        "title": "How Accugile Replaced Email and Spreadsheets with a Laravel Operations System for Gujarat Agro Distributors",
+        "desc": "One Laravel application for orders, stock and delivery scheduling, with dashboards for management and a simple mobile view for field staff.",
+        "tags": [
+          "Agricultural Distribution",
+          "Custom Web Application",
+          "India"
+        ]
+      },
+      {
+        "slug": "cascadia-cloud-services",
+        "title": "How Accugile Connected Stripe Billing to HubSpot for Cascadia Cloud Services",
+        "desc": "A webhook-driven integration with retry logic and a monitoring dashboard, so sales and support see account and payment status instantly.",
+        "tags": [
+          "CRM Integration",
+          "B2B SaaS",
+          "Canada"
+        ]
+      },
+      {
+        "slug": "medsoft",
+        "title": "Engineering Partner for Medsoft's Healthcare Workflow Platform",
+        "desc": "How Accugile helped Medsoft replace a fragile legacy monolith with a fast, secure, cloud-native platform.",
+        "tags": [
+          "Healthcare / HealthTech",
+          "Cloud Modernization",
+          "Dedicated Pod"
+        ]
+      }
+    ]
+  },
+  "lakeshore-advisory": {
+    "slug": "lakeshore-advisory",
+    "title": "How Accugile Built a Credible, Easy-to-Maintain Corporate Website for Lakeshore Advisory Group",
+    "subtitle": "A polished multi-page WordPress website on Avada and Fusion Builder, with practice-area pages, team profiles and a resource library that the marketing team updates without developers, and 35% more inbound enquiries in the first quarter.",
+    "breadcrumbTitle": "Lakeshore Advisory Group",
+    "chips": [
+      "Professional Services & Consulting",
+      "Corporate WordPress",
+      "United States"
+    ],
+    "glance": {
+      "client": "Lakeshore Advisory Group LLC",
+      "letter": "L",
+      "items": [
+        {
+          "label": "Engagement",
+          "value": "Fixed-scope website project followed by a monthly care plan"
+        },
+        {
+          "label": "Duration",
+          "value": "14 weeks from kick-off to launch"
+        },
+        {
+          "label": "Team",
+          "value": "5-person team: PM, Content Strategist, UI Designer, WordPress Developer, QA"
+        },
+        {
+          "label": "Services",
+          "value": "Discovery, IA, content strategy, UI design, WordPress development, SEO migration, training"
+        },
+        {
+          "label": "Technologies",
+          "value": "WordPress, Avada, Fusion Builder, ACF, WP Engine, Cloudflare"
+        },
+        {
+          "label": "Integrations",
+          "value": "HubSpot forms/CRM, Calendly, GA4, Google Tag Manager, LinkedIn Insight Tag"
+        }
+      ]
+    },
+    "heroStats": [
+      {
+        "value": "+35%",
+        "label": "inbound enquiries in Q1"
+      },
+      {
+        "value": "96",
+        "label": "mobile performance score"
+      },
+      {
+        "value": "140+",
+        "label": "pages migrated"
+      },
+      {
+        "value": "0",
+        "label": "developer tickets for routine updates"
+      }
+    ],
+    "tocItems": [],
+    "contentHtml": "",
+    "moreStudies": [
+      {
+        "slug": "deccan-textiles",
+        "title": "How Accugile Implemented and Customised Odoo ERP for Deccan Textiles",
+        "desc": "An Odoo implementation tailored to textile workflows, from yarn purchasing to dyeing, stitching and dispatch.",
+        "tags": [
+          "Textile Manufacturing",
+          "Odoo ERP",
+          "India"
+        ]
+      },
+      {
+        "slug": "brooklyn-bean-roasters",
+        "title": "How Accugile Keeps Brooklyn Bean Roasters’ Online Store Fast, Secure and Growing",
+        "desc": "A two-year maintenance and performance retainer that cut page load time from 6.2 to 1.8 seconds.",
+        "tags": [
+          "Specialty Coffee",
+          "DTC & Wholesale",
+          "United States"
+        ]
+      },
+      {
+        "slug": "aarhus-cloudworks",
+        "title": "How Accugile’s Dedicated Developers Helped Aarhus Cloudworks Ship 50% Faster",
+        "desc": "Three senior Accugile engineers joined Aarhus Cloudworks’ in-house product team and helped increase delivery speed by about 50%.",
+        "tags": [
+          "B2B Cloud Software",
+          "Dedicated Pod",
+          "Denmark"
+        ]
+      }
+    ]
+  },
+  "mile-high-makers-studio": {
+    "slug": "mile-high-makers-studio",
+    "title": "How Accugile Built a Cohort Learning Platform for Mile High Makers Studio",
+    "subtitle": "WooCommerce subscriptions, a course system and video classroom integration combined into one experience for live sessions, community discussion and payments. Students stay engaged between sessions, and cohorts have doubled without adding staff.",
+    "breadcrumbTitle": "Mile High Makers Studio",
+    "chips": [
+      "Cohort Learning & EdTech",
+      "Community & Subscriptions",
+      "United States"
+    ],
+    "glance": {
+      "client": "Mile High Makers Studio LLC",
+      "letter": "M",
+      "items": [
+        {
+          "label": "Engagement",
+          "value": "Fixed-scope platform build followed by ongoing support"
+        },
+        {
+          "label": "Duration",
+          "value": "14 weeks to launch, ongoing improvements"
+        },
+        {
+          "label": "Team",
+          "value": "4-person team: PM, WordPress/LMS Engineer, WooCommerce Engineer, QA"
+        },
+        {
+          "label": "Services",
+          "value": "Platform strategy, UX design, LMS and community setup, subscriptions, video integration, automation"
+        },
+        {
+          "label": "Technologies",
+          "value": "WordPress, LearnDash, WooCommerce Subscriptions, BuddyBoss, PHP 8.2"
+        },
+        {
+          "label": "Integrations",
+          "value": "Zoom, Vimeo, Stripe, Google Calendar, ConvertKit, Slack"
+        }
+      ]
+    },
+    "heroStats": [
+      {
+        "value": "2x",
+        "label": "cohort size, same staff"
+      },
+      {
+        "value": "88%",
+        "label": "cohort completion"
+      },
+      {
+        "value": "-70%",
+        "label": "admin hours per cohort"
+      },
+      {
+        "value": "41%",
+        "label": "of graduates buy another course"
+      }
+    ],
+    "tocItems": [],
+    "contentHtml": "",
+    "moreStudies": [
+      {
+        "slug": "accudemy",
+        "title": "How Accugile Built a Custom LMS That Scales Teaching and Revenue for Accudemy",
+        "desc": "A branded, automated learning platform that turned a content-led online learning company into a scalable EdTech business.",
+        "tags": [
+          "EdTech / Online Learning",
+          "Custom LMS & Commerce",
+          "United States"
+        ]
+      },
+      {
+        "slug": "lakeshore-advisory",
+        "title": "How Accugile Built a Credible, Easy-to-Maintain Corporate Website for Lakeshore Advisory Group",
+        "desc": "A polished multi-page WordPress website on Avada and Fusion Builder with practice-area pages and team profiles.",
+        "tags": [
+          "Professional Services",
+          "Corporate WordPress",
+          "United States"
+        ]
+      },
+      {
+        "slug": "malnad-coffee-collective",
+        "title": "How Accugile Took Over Care of Ten WordPress and WooCommerce Sites for Malnad Coffee Collective",
+        "desc": "Standardised hosting, automated backups and performance fixes across ten sites.",
+        "tags": [
+          "WordPress & WooCommerce",
+          "Maintenance & Support",
+          "India"
+        ]
+      }
+    ]
   }
 };
 

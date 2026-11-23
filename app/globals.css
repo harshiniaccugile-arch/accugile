@@ -4103,22 +4103,25 @@ details.faq p{color:#475569;line-height:1.7;margin-top:10px;max-width:860px}
 .quote figcaption{margin-top:22px;display:flex;align-items:center;gap:12px;font-size:14.5px;color:#B9C3D6}
 .quote figcaption b{width:42px;height:42px;border-radius:50%;background:var(--tone);display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF}
 .more{padding:72px 0 24px;background:#F7F8FB}
-.cs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px}
-.cscard{position:relative;background:#FFFFFF;border:1px solid #E5E8EF;border-radius:20px;overflow:hidden;color:#0F172A;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
-.cscard:hover{color:#0F172A;transform:translateY(-6px);box-shadow:0 30px 60px -34px rgba(15,23,42,.45)}
-.cscard .top{background:#0B1020;color:#FFFFFF;padding:22px 22px 20px;position:relative;overflow:hidden}
-.cscard .top:after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;border:1px dashed rgba(255,255,255,.18)}
-.cscard .top .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.cscard .top b{width:40px;height:40px;border-radius:11px;background:var(--tone);display:inline-flex;align-items:center;justify-content:center;font-family:"Plus Jakarta Sans",sans-serif;font-size:17px}
-.cscard .top small{font-size:12.5px;color:#AEB8CC}
-.cscard .kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
-.cscard .kpis strong{display:block;font-family:"Plus Jakarta Sans",sans-serif;font-size:26px;font-weight:800;letter-spacing:-.03em;color:var(--toneL);line-height:1.05}
-.cscard .kpis span{font-size:12px;color:#AEB8CC;line-height:1.35;display:block;margin-top:3px}
-.cscard .bd{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
-.cscard .ind{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ac)}
-.cscard h3{font-size:19px;line-height:1.3}
-.cscard p{font-size:14.5px;color:#475569;line-height:1.6}
-.cscard .go{margin-top:auto;padding-top:12px;border-top:1px solid #EEF1F5;font-weight:700;color:var(--ac);font-size:14.5px;display:flex;justify-content:space-between}
+.cs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px;align-items:stretch}
+.cscard{position:relative;background:#FFFFFF;border:1px solid #E5E8EF;border-radius:20px;overflow:hidden;color:#0F172A;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;text-decoration:none}
+.cscard:hover{color:#0F172A;transform:translateY(-6px);box-shadow:0 30px 60px -28px rgba(15,23,42,.22);border-color:#CBD5E1}
+.cscard .cs-card-thumb{width:100%;height:200px;overflow:hidden;background:#F8FAFC;position:relative;border-bottom:1px solid #EEF2F6}
+.cscard .cs-card-thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .5s ease}
+.cscard:hover .cs-card-thumb img{transform:scale(1.04)}
+.cscard .top{background:#0B1020;color:#FFFFFF;padding:22px 24px;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.06)}
+.cscard .top:after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;border:1px dashed rgba(255,255,255,.15);pointer-events:none}
+.cscard .top .row{display:flex;justify-content:flex-start;align-items:center;gap:10px}
+.cscard .top b{width:36px;height:36px;border-radius:10px;background:var(--tone);display:inline-flex;align-items:center;justify-content:center;font-family:"Plus Jakarta Sans",sans-serif;font-size:16px;font-weight:700}
+.cscard .top small{font-size:13px;color:#CBD5E1;font-weight:600;letter-spacing:0.02em}
+.cscard .kpis{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.cscard .kpis strong{display:block;font-family:"Plus Jakarta Sans",sans-serif;font-size:24px;font-weight:800;letter-spacing:-.03em;color:var(--toneL);line-height:1.1}
+.cscard .kpis span{font-size:12px;color:#94A3B8;line-height:1.35;display:block;margin-top:4px;font-weight:500}
+.cscard .bd{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.cscard .ind{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ac)}
+.cscard h3{font-size:18px;line-height:1.35;font-weight:700;color:#0F172A}
+.cscard p{font-size:14px;color:#475569;line-height:1.6}
+.cscard .go{margin-top:auto;padding-top:14px;border-top:1px solid #EEF1F5;font-weight:700;color:var(--ac);font-size:14px;display:flex;justify-content:space-between;align-items:center}
 .cs-cta{padding:56px 0 96px}
 .cs-cta .box{background:var(--ac);color:#FFFFFF;border-radius:26px;padding:52px;display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
 .cs-cta .box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:420px;height:420px;border-radius:50%;border:1px dashed rgba(255,255,255,.3)}

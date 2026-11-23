@@ -1,6 +1,6 @@
 const stats = [
     { value: '30+', label: 'in-house specialists', bg: '#EEF2FF' },
-    { value: '200', label: 'years combined experience', bg: '#EFFAF5' },
+    { value: '200+', label: 'years combined experience', bg: '#EFFAF5' },
     { value: '500+', label: 'projects delivered', bg: '#FDEEE4' },
     { value: '17+', label: 'countries served', bg: '#F3EEFF' },
 ];
