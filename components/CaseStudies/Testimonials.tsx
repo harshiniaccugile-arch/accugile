@@ -2,28 +2,28 @@ import SecHead from '@/components/About/SecHead';
 
 const testimonials = [
     {
-        quote: 'Accugile behaved like part of our company: they rode along on our routes, listened to our drivers, and shipped improvements every week. KohlTrack has changed how we work, how we bill, and how our customers see us.',
-        author: 'Managing Director',
-        role: 'Kohl Recycling GmbH · Germany',
+        quote: 'Three Accugile developers joined our in-house team and became productive within two weeks. They take part in our daily standups, follow our coding standards, and review code like colleagues. Our delivery speed has increased by about 50% since they joined. I think of them as part of our team, not as a vendor.',
+        name: 'Anders Holm',
+        role: 'CTO, Aarhus Cloudworks A/S',
+        location: 'Aarhus, Denmark',
         bg: '#F0FDF4',
         avatarBg: '#16A34A',
-        letter: 'K'
     },
     {
-        quote: 'Three Accugile developers joined our in-house team and became productive within two weeks. They take part in our daily standups, follow our coding standards, and review code like colleagues. Our delivery speed has increased by about 50% since they joined.',
-        author: 'Anders Holm',
-        role: 'CTO, Aarhus Cloudworks A/S · Denmark',
+        quote: 'Accugile took over the care of our ten WordPress and WooCommerce sites. They standardized hosting, set up automated backups and malware scanning, and fixed performance issues that had lingered for years. Support tickets are answered fast and resolved properly, and our team can focus on content rather than firefighting.',
+        name: 'Kavita Rao',
+        role: 'Digital Head, Malnad Coffee Collective Pvt Ltd',
+        location: 'Bengaluru, India',
         bg: '#ECFEFF',
         avatarBg: '#0891B2',
-        letter: 'A'
     },
     {
-        quote: 'In our field every day counts. Accugile understood the clinical pressure from the first workshop and built something our surgeons actually enjoy using. The platform removed the friction around our engineering and gave us a process we can scale and prove to any auditor.',
-        author: 'Co-founder & CEO',
-        role: 'SynMedix · Israel',
+        quote: 'Our sales team lived in HubSpot while finance used a separate ERP, and the two never agreed. Accugile built a reliable two-way sync for companies, deals, and invoices, with clear error handling and alerts. Quotes now flow straight to billing, and forecasts are accurate for the first time. They documented everything thoroughly.',
+        name: 'Emma Lindgren',
+        role: 'Head of Sales Operations, Nordic Fleet Solutions AB',
+        location: 'Gothenburg, Sweden',
         bg: '#F5F3FF',
         avatarBg: '#7C3AED',
-        letter: 'S'
     },
 ];
 
@@ -35,7 +35,7 @@ export default function Testimonials() {
                 <div className="grid g3">
                     {testimonials.map((t) => (
                         <figure
-                            key={t.author + t.role}
+                            key={t.name}
                             style={{
                                 margin: 0,
                                 background: t.bg,
@@ -53,6 +53,7 @@ export default function Testimonials() {
                             </blockquote>
                             <figcaption style={{ marginTop: 'auto', display: 'flex', gap: 12, alignItems: 'center' }}>
                                 <span
+                                    aria-hidden="true"
                                     style={{
                                         width: 42,
                                         height: 42,
@@ -63,14 +64,16 @@ export default function Testimonials() {
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                         fontWeight: 700,
-                                        fontSize: 18
+                                        fontSize: 18,
+                                        flexShrink: 0
                                     }}
                                 >
-                                    {t.letter}
+                                    {t.name.trim().charAt(0).toUpperCase()}
                                 </span>
                                 <span>
-                                    <strong style={{ display: 'block', color: '#0F172A', fontSize: 15 }}>{t.author}</strong>
-                                    <span style={{ fontSize: 13, color: '#5B6474' }}>{t.role}</span>
+                                    <strong style={{ display: 'block', color: '#0F172A', fontSize: 15 }}>{t.name}</strong>
+                                    <span style={{ display: 'block', fontSize: 13, color: '#5B6474', lineHeight: 1.4 }}>{t.role}</span>
+                                    <span style={{ display: 'block', fontSize: 13, color: '#5B6474', lineHeight: 1.4 }}>{t.location}</span>
                                 </span>
                             </figcaption>
                         </figure>

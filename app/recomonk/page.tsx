@@ -38,7 +38,7 @@ export default function RecomonkPage() {
           <RecomonkFaq />
           <BuiltByAccugileWeb />
           <RecomonkCTA />
-          <RecomonkTrialBar />
+
         </main>
       </div>
     </PageShell>

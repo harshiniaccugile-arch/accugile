@@ -28,20 +28,12 @@ export default function ForBrands() {
           </div>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
             <a
-              href="https://recomonk.com"
+              href="/contact"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-ac"
             >
               Submit your product
-            </a>
-            <a
-              href="https://recomonk.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-ghost"
-            >
-              Advertise with us
             </a>
           </div>
         </div>

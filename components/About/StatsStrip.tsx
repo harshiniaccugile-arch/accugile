@@ -1,6 +1,6 @@
 const stats = [
     ['#EEF2FF', '30+', 'in-house specialists'],
-    ['#EFFAF5', '200', 'years combined experience'],
+    ['#EFFAF5', '200+', 'years combined experience'],
     ['#FDEEE4', '500+', 'projects delivered'],
     ['#F3EEFF', '17+', 'countries served'],
 ];

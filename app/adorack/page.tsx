@@ -41,7 +41,7 @@ export default function AdorackPage() {
         <AdorackFaq />
         <BuiltByAccugile />
         <AdorackCTA />
-        <TrialBar />
+
       </div>
     </PageShell>
   );

@@ -16,28 +16,36 @@ const services = [
     'Other',
 ];
 
-const budgets = ['[Under $5k]', '[$5k to $20k]', '[$20k to $50k]', '[$50k+]'];
+const budgets = ['Under $5k', '$5k to $20k', '$20k to $50k', '$50k+'];
 
 export default function ContactForm() {
     const [status, setStatus] = useState<Status>('idle');
+    const [errorMsg, setErrorMsg] = useState('');
 
     async function onSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const form = e.currentTarget;
         const data = Object.fromEntries(new FormData(form).entries());
-        data.nda = form.nda.checked ? 'yes' : 'no';
+        data.nda = (form.elements.namedItem('nda') as HTMLInputElement).checked ? 'yes' : 'no';
 
         setStatus('sending');
+        setErrorMsg('');
         try {
             const res = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
             });
-            if (!res.ok) throw new Error('Request failed');
+            if (!res.ok) {
+                const j = await res.json().catch(() => null);
+                console.error('Contact form failed:', res.status, j);
+                throw new Error(j?.error || `Request failed (${res.status})`);
+            }
             form.reset();
             setStatus('sent');
-        } catch {
+        } catch (err) {
+            console.error('Contact form error:', err);
+            setErrorMsg(err instanceof Error ? err.message : '');
             setStatus('error');
         }
     }
@@ -58,6 +66,17 @@ export default function ContactForm() {
                 boxShadow: '0 40px 80px -48px rgba(48,77,219,0.4)',
             }}
         >
+            {/* Honeypot: odd name so browsers don't autofill it; bots tend to fill it */}
+            <div
+                aria-hidden="true"
+                style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden', opacity: 0 }}
+            >
+                <label>
+                    Leave this field empty
+                    <input type="text" name="hp_field_x7" tabIndex={-1} autoComplete="off" />
+                </label>
+            </div>
+
             <label className="field">
                 Full name
                 <input type="text" name="name" autoComplete="name" required />
@@ -128,7 +147,7 @@ export default function ContactForm() {
             >
                 {status === 'sent'
                     ? 'Thank you. A consultant will respond within one business day.'
-                    : 'Something went wrong. Please try again or email us directly.'}
+                    : `Something went wrong${errorMsg ? ` (${errorMsg})` : ''}. Please try again or email us directly.`}
             </p>
             <p style={{ gridColumn: '1 / -1', fontSize: 13, color: '#5B6474', textAlign: 'center' }}>
                 Your information is handled in accordance with our <Link href="/privacy">Privacy Policy</Link>.

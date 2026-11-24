@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 const details = [
     ['Location', 'Coimbatore, Tamil Nadu, India'],
-    ['Work model', '[On-site / hybrid]'],
+    ['Work model', 'On-site'],
     ['Departments hiring', 'Engineering, Design, QA, Marketing'],
-    ['Apply', '[careers@accugile.com]'],
+    ['Apply', 'careers@accugile.com'],
 ];
 
 export default function CareersHero() {

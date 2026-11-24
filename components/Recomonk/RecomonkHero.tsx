@@ -72,7 +72,7 @@ export default function RecomonkHero() {
                   />
                 </svg>
               </a>
-              <a
+              {/* <a
                 href="https://recomonk.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -85,7 +85,7 @@ export default function RecomonkHero() {
                 }}
               >
                 Have a product to feature? Work with us →
-              </a>
+              </a> */}
             </div>
             <div className="rm-trust rise rise4">
               <span>Free to read</span>
@@ -123,9 +123,9 @@ export default function RecomonkHero() {
                   <span className="lbl">Best overall</span>
                   <strong>Wireless noise-cancelling headphones</strong>
                   <div className="row">
-                    <span className="now">From $[XX]</span>
-                    <span className="was">$[XX]</span>
-                    <span className="off">-[XX]%</span>
+                    <span className="now">From $9</span>
+                    <span className="was">$12</span>
+                    <span className="off">-25%</span>
                     <span className="amz">FROM AMAZON</span>
                   </div>
                 </div>
@@ -144,7 +144,7 @@ export default function RecomonkHero() {
                   </span>
                   <strong>Everyday smartwatch</strong>
                   <div className="row">
-                    <span className="now">From $[XX]</span>
+                    <span className="now">From $44</span>
                     <span className="deal">A VERY GOOD DEAL!</span>
                     <span className="amz">FROM AMAZON</span>
                   </div>
@@ -164,7 +164,7 @@ export default function RecomonkHero() {
                   </span>
                   <strong>Instant camera</strong>
                   <div className="row">
-                    <span className="now">From $[XX]</span>
+                    <span className="now">From $125</span>
                     <span className="amz">FROM AMAZON</span>
                   </div>
                 </div>
@@ -176,7 +176,7 @@ export default function RecomonkHero() {
               </span>
               <span>
                 <strong>Price dropped</strong>
-                <small>Now [XX]% off on Amazon</small>
+                <small>Now 20% off on Amazon</small>
               </span>
             </div>
             <div className="sticker float2" style={{ right: '-16px', bottom: '30px' }} aria-hidden="true">

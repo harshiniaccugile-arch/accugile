@@ -1,10 +1,10 @@
 import L from '@/components/Home/Link';
 
 const glance = [
-    ['Founded', '[Year]'],
+    ['Founded', '2012'],
     ['Headquarters', 'Coimbatore, Tamil Nadu, India'],
     ['Team', '30+ in-house specialists'],
-    ['Experience', '20+ years combined'],
+    ['Experience', '200+ years combined'],
     ['Clients served', '17+ countries'],
 ];
 
@@ -13,7 +13,7 @@ export default function AboutHero() {
         <section style={{ background: 'linear-gradient(180deg,#F5F7FD 0%,#FFFFFF 100%)', borderBottom: '1px solid #E5E8EF' }}>
             <div className="wrap" style={{ paddingTop: 28, paddingBottom: 72 }}>
                 <nav className="crumb" aria-label="Breadcrumb">
-                    <L href="/">Home</L> <span aria-hidden="true">/</span> <span>Company</span> <span aria-hidden="true">/</span> <span>About Us</span>
+                    <L href="/">Home</L> <span aria-hidden="true">/</span> <span>About Us</span>
                 </nav>
 
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 48, alignItems: 'flex-start', marginTop: 40 }}>

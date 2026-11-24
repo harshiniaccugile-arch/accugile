@@ -27,7 +27,7 @@ export default function BuiltByAccugileMarketplace() {
               Two-sided onboarding, vendor dashboards, multi-listing carts, secure payments and in-app messaging: we run all of it in production.
             </p>
           </div>
-          <Link href="/services/saas-development" className="btn btn-ghost">
+          <Link href="/saas-development" className="btn btn-ghost">
             Explore marketplace development →
           </Link>
         </div>

@@ -75,16 +75,9 @@ export default function LegalTabs() {
               {meta.subtitle}
             </p>
             <div className="lg-meta">
-              <span>Effective date: <b className="ph-i">[DD Month 2026]</b></span>
-              <span>Last updated: <b className="ph-i">[DD Month 2026]</b></span>
-              <span>
-                <button
-                  onClick={() => window.print()}
-                  style={{ background: 'none', border: 'none', padding: 0, color: '#304DDB', cursor: 'pointer', textDecoration: 'underline', textUnderlineOffset: 3, fontSize: 'inherit' }}
-                >
-                  Print or save as PDF
-                </button>
-              </span>
+              <span>Effective date: <b className="ph-i">28-02-2012</b></span>
+              <span>Last updated: <b className="ph-i">24-11-2026</b></span>
+
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@ export default function TeamCTA() {
                     </div>
                     <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                         <L href="/contact" className="btn btn-ac">Request a proposal</L>
-                        <L href="/about" className="btn btn-ghost">About Accugile</L>
+
                     </div>
                 </div>
             </div>

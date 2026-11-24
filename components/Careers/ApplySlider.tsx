@@ -9,12 +9,16 @@ interface ApplySliderProps {
   roleTitle: string;
 }
 
+const MAX_TOTAL_BYTES = 4 * 1024 * 1024;
+
 export default function ApplySlider({ isOpen, onClose, roleTitle }: ApplySliderProps) {
   const [resumeName, setResumeName] = useState<string>('');
   const [coverName, setCoverName] = useState<string>('');
   const [consent, setConsent] = useState(false);
   const [captchaChecked, setCaptchaChecked] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
   const resumeInputRef = useRef<HTMLInputElement>(null);
   const coverInputRef = useRef<HTMLInputElement>(null);
@@ -37,6 +41,7 @@ export default function ApplySlider({ isOpen, onClose, roleTitle }: ApplySliderP
     } else {
       document.body.style.overflow = '';
       setSubmitted(false);
+      setError('');
     }
     return () => {
       document.body.style.overflow = '';
@@ -45,17 +50,56 @@ export default function ApplySlider({ isOpen, onClose, roleTitle }: ApplySliderP
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError('');
+
+    const form = e.currentTarget;
+    const resume = resumeInputRef.current?.files?.[0];
+    const cover = coverInputRef.current?.files?.[0];
+
+    if (!resume) {
+      setError('Please attach your resume (.pdf, .doc or .docx).');
+      return;
+    }
+    if (resume.size + (cover?.size ?? 0) > MAX_TOTAL_BYTES) {
+      setError('Your attachments are too large. Please keep them under 4 MB in total.');
+      return;
+    }
     if (!consent) {
-      alert('Please accept the Online Application Consent before submitting.');
+      setError('Please accept the Online Application Consent before submitting.');
       return;
     }
     if (!captchaChecked) {
-      alert('Please check the reCAPTCHA verification.');
+      setError('Please check the verification box.');
       return;
     }
-    setSubmitted(true);
+
+    const data = new FormData(form); // includes the named inputs and both files
+    data.set('role', roleTitle);
+
+    setSending(true);
+    try {
+      const res = await fetch('/api/apply', { method: 'POST', body: data });
+      if (!res.ok) {
+        const j = await res.json().catch(() => null);
+        throw new Error(j?.error || 'Request failed');
+      }
+      form.reset();
+      setResumeName('');
+      setCoverName('');
+      setConsent(false);
+      setCaptchaChecked(false);
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error && err.message !== 'Request failed'
+          ? err.message
+          : 'Something went wrong. Please try again or email us directly.'
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -188,129 +232,72 @@ export default function ApplySlider({ isOpen, onClose, roleTitle }: ApplySliderP
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
+            {/* Honeypot: hidden from real users, bots tend to fill it */}
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+            />
+
             {/* Form Fields: 2 Columns with minimalist bottom-border styling */}
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 360px), 1fr))',
                 columnGap: '48px',
                 rowGap: '36px',
                 marginBottom: '40px',
               }}
             >
-              {/* Full Name */}
               <div style={{ gridColumn: '1 / -1' }}>
-                <input
-                  type="text"
-                  required
-                  placeholder="Full Name (required)"
-                  className="apply-input"
-                />
+                <input type="text" name="name" required autoComplete="name" placeholder="Full Name (required)" className="apply-input" />
               </div>
 
-              {/* Your Email */}
               <div>
-                <input
-                  type="email"
-                  required
-                  placeholder="Your Email (required)"
-                  className="apply-input"
-                />
+                <input type="email" name="email" required autoComplete="email" placeholder="Your Email (required)" className="apply-input" />
               </div>
 
-              {/* Phone Number */}
               <div>
-                <input
-                  type="tel"
-                  required
-                  placeholder="Phone Number (required)"
-                  className="apply-input"
-                />
+                <input type="tel" name="phone" required autoComplete="tel" placeholder="Phone Number (required)" className="apply-input" />
               </div>
 
-              {/* Location */}
               <div>
-                <input
-                  type="text"
-                  required
-                  placeholder="Location (required)"
-                  className="apply-input"
-                />
+                <input type="text" name="location" required placeholder="Location (required)" className="apply-input" />
               </div>
 
-              {/* Current Organization */}
               <div>
-                <input
-                  type="text"
-                  placeholder="Current Organization"
-                  className="apply-input"
-                />
+                <input type="text" name="organization" placeholder="Current Organization" className="apply-input" />
               </div>
 
-              {/* Current CTC */}
               <div>
-                <input
-                  type="text"
-                  required
-                  placeholder="Current CTC (required)"
-                  className="apply-input"
-                />
+                <input type="text" name="currentCtc" required placeholder="Current CTC (required)" className="apply-input" />
               </div>
 
-              {/* Expected Salary */}
               <div>
-                <input
-                  type="text"
-                  required
-                  placeholder="Expected Salary (required)"
-                  className="apply-input"
-                />
+                <input type="text" name="expectedSalary" required placeholder="Expected Salary (required)" className="apply-input" />
               </div>
 
-              {/* Years of Experience */}
               <div>
-                <input
-                  type="text"
-                  required
-                  placeholder="Years of Experience (required)"
-                  className="apply-input"
-                />
+                <input type="text" name="experience" required placeholder="Years of Experience (required)" className="apply-input" />
               </div>
 
-              {/* Notice Period */}
               <div>
-                <input
-                  type="text"
-                  placeholder="Notice Period"
-                  className="apply-input"
-                />
+                <input type="text" name="noticePeriod" placeholder="Notice Period" className="apply-input" />
               </div>
 
-              {/* LinkedIn URL */}
               <div style={{ gridColumn: '1 / -1' }}>
-                <input
-                  type="url"
-                  placeholder="LinkedIn URL"
-                  className="apply-input"
-                />
+                <input type="url" name="linkedin" placeholder="LinkedIn URL" className="apply-input" />
               </div>
 
-              {/* How did you hear about this opportunity? */}
               <div>
-                <input
-                  type="text"
-                  placeholder="How did you hear about this opportunity?"
-                  className="apply-input"
-                />
+                <input type="text" name="source" placeholder="How did you hear about this opportunity?" className="apply-input" />
               </div>
 
-              {/* If you were referred, by who? */}
               <div>
-                <input
-                  type="text"
-                  placeholder="If you were referred, by who?"
-                  className="apply-input"
-                />
+                <input type="text" name="referral" placeholder="If you were referred, by who?" className="apply-input" />
               </div>
             </div>
 
@@ -318,34 +305,24 @@ export default function ApplySlider({ isOpen, onClose, roleTitle }: ApplySliderP
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
                 gap: '24px',
                 marginBottom: '36px',
               }}
             >
-              {/* Attach Resume */}
+              {/* Attach Resume (validated in handleSubmit, because a hidden required input blocks the form silently) */}
               <div>
                 <input
                   type="file"
+                  name="resume"
                   ref={resumeInputRef}
                   accept=".doc,.docx,.pdf"
-                  required
                   style={{ display: 'none' }}
-                  onChange={(e) => {
-                    if (e.target.files && e.target.files[0]) {
-                      setResumeName(e.target.files[0].name);
-                    }
-                  }}
+                  onChange={(e) => setResumeName(e.target.files?.[0]?.name ?? '')}
                 />
-                <button
-                  type="button"
-                  onClick={() => resumeInputRef.current?.click()}
-                  className="file-btn"
-                >
+                <button type="button" onClick={() => resumeInputRef.current?.click()} className="file-btn">
                   <Paperclip size={16} />
-                  <span>
-                    {resumeName ? resumeName : 'Attach Resume - .doc, .docx, .pdf (required)'}
-                  </span>
+                  <span>{resumeName ? resumeName : 'Attach Resume - .doc, .docx, .pdf (required)'}</span>
                 </button>
               </div>
 
@@ -353,24 +330,15 @@ export default function ApplySlider({ isOpen, onClose, roleTitle }: ApplySliderP
               <div>
                 <input
                   type="file"
+                  name="cover"
                   ref={coverInputRef}
                   accept=".doc,.docx,.pdf"
                   style={{ display: 'none' }}
-                  onChange={(e) => {
-                    if (e.target.files && e.target.files[0]) {
-                      setCoverName(e.target.files[0].name);
-                    }
-                  }}
+                  onChange={(e) => setCoverName(e.target.files?.[0]?.name ?? '')}
                 />
-                <button
-                  type="button"
-                  onClick={() => coverInputRef.current?.click()}
-                  className="file-btn"
-                >
+                <button type="button" onClick={() => coverInputRef.current?.click()} className="file-btn">
                   <Paperclip size={16} />
-                  <span>
-                    {coverName ? coverName : 'Attach Cover Letter - .doc, .docx, .pdf'}
-                  </span>
+                  <span>{coverName ? coverName : 'Attach Cover Letter - .doc, .docx, .pdf'}</span>
                 </button>
               </div>
             </div>
@@ -423,7 +391,7 @@ export default function ApplySlider({ isOpen, onClose, roleTitle }: ApplySliderP
               </label>
             </div>
 
-            {/* reCAPTCHA Box + Yellow APPLY NOW Button */}
+            {/* Verification box + Yellow APPLY NOW Button */}
             <div
               style={{
                 display: 'flex',
@@ -434,7 +402,6 @@ export default function ApplySlider({ isOpen, onClose, roleTitle }: ApplySliderP
                 marginBottom: '24px',
               }}
             >
-              {/* Mock reCAPTCHA */}
               <div
                 onClick={() => setCaptchaChecked(!captchaChecked)}
                 style={{
@@ -455,7 +422,7 @@ export default function ApplySlider({ isOpen, onClose, roleTitle }: ApplySliderP
                   <input
                     type="checkbox"
                     checked={captchaChecked}
-                    onChange={() => {}}
+                    onChange={() => { }}
                     style={{ width: '22px', height: '22px', cursor: 'pointer' }}
                   />
                   <span style={{ fontSize: '14px', color: '#374151', fontWeight: 500 }}>
@@ -470,9 +437,9 @@ export default function ApplySlider({ isOpen, onClose, roleTitle }: ApplySliderP
                 </div>
               </div>
 
-              {/* Yellow APPLY NOW Button */}
               <button
                 type="submit"
+                disabled={sending}
                 style={{
                   backgroundColor: '#FACC15',
                   color: '#0F172A',
@@ -483,16 +450,28 @@ export default function ApplySlider({ isOpen, onClose, roleTitle }: ApplySliderP
                   height: '74px',
                   border: 'none',
                   borderRadius: '4px',
-                  cursor: 'pointer',
+                  cursor: sending ? 'not-allowed' : 'pointer',
+                  opacity: sending ? 0.7 : 1,
                   textTransform: 'uppercase',
                   transition: 'background-color 0.15s ease',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#EAB308')}
+                onMouseEnter={(e) => !sending && (e.currentTarget.style.backgroundColor = '#EAB308')}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#FACC15')}
               >
-                APPLY NOW
+                {sending ? 'SENDING…' : 'APPLY NOW'}
               </button>
             </div>
+
+            {/* Error message */}
+            {error && (
+              <p
+                role="alert"
+                aria-live="polite"
+                style={{ textAlign: 'center', fontSize: '14px', color: '#B42318', margin: '0 0 16px' }}
+              >
+                {error}
+              </p>
+            )}
 
             {/* Disclaimer footer */}
             <p
@@ -511,4 +490,3 @@ export default function ApplySlider({ isOpen, onClose, roleTitle }: ApplySliderP
     </div>
   );
 }
-

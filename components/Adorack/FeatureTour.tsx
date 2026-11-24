@@ -2,6 +2,16 @@
 
 import React, { useState } from 'react';
 
+// Library tiles: fallback color + seeded placeholder photo
+const LIBRARY_TILES = [
+  { bg: '#FDE7D6', seed: 'adorack-lib-1' },
+  { bg: '#DCE6FF', seed: 'adorack-lib-2' },
+  { bg: '#D9F2E6', seed: 'adorack-lib-3' },
+  { bg: '#EDE4FF', seed: 'adorack-lib-4' },
+  { bg: '#FFF1C9', seed: 'adorack-lib-5' },
+  { bg: '#E2E8F0', seed: 'adorack-lib-6' },
+];
+
 export default function FeatureTour() {
   const [activeTab, setActiveTab] = useState(1);
 
@@ -238,12 +248,30 @@ export default function FeatureTour() {
           </div>
           <div className="fvis">
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '8px' }}>
-              <div style={{ aspectRatio: '1', borderRadius: '10px', background: '#FDE7D6' }}></div>
-              <div style={{ aspectRatio: '1', borderRadius: '10px', background: '#DCE6FF' }}></div>
-              <div style={{ aspectRatio: '1', borderRadius: '10px', background: '#D9F2E6' }}></div>
-              <div style={{ aspectRatio: '1', borderRadius: '10px', background: '#EDE4FF' }}></div>
-              <div style={{ aspectRatio: '1', borderRadius: '10px', background: '#FFF1C9' }}></div>
-              <div style={{ aspectRatio: '1', borderRadius: '10px', background: '#E2E8F0' }}></div>
+              {LIBRARY_TILES.map((t) => (
+                <div
+                  key={t.seed}
+                  style={{
+                    aspectRatio: '1',
+                    borderRadius: '10px',
+                    background: t.bg,
+                    overflow: 'hidden',
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`https://picsum.photos/seed/${t.seed}/400/400`}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e) => {
+                      // If the photo fails, hide it so the colored tile shows
+                      e.currentTarget.style.display = 'none';
+                    }}
+                    style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </div>
+              ))}
             </div>
             <div className="mini">
               <span className="pbadge" style={{ background: '#F28C28' }}>RSS</span>
@@ -256,4 +284,3 @@ export default function FeatureTour() {
     </section>
   );
 }
-

@@ -1,6 +1,153 @@
+/* ---------- Reusable table ---------- */
+function DataTable({
+  head,
+  rows,
+  widths = ['34%', '66%'],
+}: {
+  head: [string, string];
+  rows: [string, string][];
+  widths?: [string, string];
+}) {
+  return (
+    <div className="pp-tw">
+      <table className="pp-t">
+        <colgroup>
+          <col style={{ width: widths[0] }} />
+          <col style={{ width: widths[1] }} />
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col">{head[0]}</th>
+            <th scope="col">{head[1]}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map(([a, b]) => (
+            <tr key={a}>
+              <td>{a}</td>
+              <td data-label={head[1]}>{b}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+/* ---------- Table data ---------- */
+const collectRows: [string, string][] = [
+  [
+    'Contact and estimate forms, email, calls, chat',
+    'Name, work email, phone number, company name, country, the service you are interested in, your budget range and anything you write in your message or attach.',
+  ],
+  [
+    'Consultations and meetings',
+    'Your name, contact details, meeting notes and, only if you agree, call recordings.',
+  ],
+  [
+    'Clients and partners',
+    'Contact and billing details, GST or tax numbers, contracts, invoices, payment records and project communications.',
+  ],
+  [
+    'Job applications',
+    'CV, contact details, education, work history, portfolio links, expected salary, notice period and interview notes.',
+  ],
+  [
+    'Newsletter or updates',
+    'Email address and your subscription preferences.',
+  ],
+];
+
+const useRows: [string, string][] = [
+  [
+    'Replying to your enquiry, preparing estimates and proposals',
+    'Your consent, given when you submit the form; under GDPR, steps taken at your request before entering a contract.',
+  ],
+  [
+    'Delivering projects, support and maintenance; invoicing and collecting payments',
+    'Performance of our contract with you; legitimate uses permitted under the DPDP Act.',
+  ],
+  [
+    'Keeping accounting, tax and business records',
+    'Compliance with legal obligations under Indian law.',
+  ],
+  [
+    'Assessing job applications',
+    'Your consent, given when you apply.',
+  ],
+  [
+    'Sending our newsletter or updates',
+    'Your consent. Every email has an unsubscribe link.',
+  ],
+  [
+    'Measuring and improving website performance',
+    'Your consent for non-essential cookies; our legitimate interest in a secure, working website.',
+  ],
+  [
+    'Preventing fraud, spam and misuse; protecting our legal rights',
+    'Legitimate uses permitted by law; our legitimate interests under GDPR.',
+  ],
+];
+
+const retentionRows: [string, string][] = [
+  [
+    'Enquiries that did not become a project',
+    '12 months from the last contact, unless you ask us to delete sooner.',
+  ],
+  [
+    'Client project data, contracts, invoices',
+    '7 years after project close, to meet Indian accounting and tax obligations.',
+  ],
+  [
+    'Job application data (unsuccessful)',
+    '6 months after notification, unless you consent to us keeping it longer.',
+  ],
+  [
+    'Newsletter subscriber data',
+    'Until you unsubscribe.',
+  ],
+  [
+    'Website analytics',
+    '26 months (Google Analytics default), then deleted.',
+  ],
+];
+
+/* ---------- Scoped styles ---------- */
+const css = `
+.pp > h2[id]{margin:60px 0 18px;scroll-margin-top:100px;line-height:1.25}
+.pp > h2[id]:first-of-type{margin-top:48px}
+.pp > h3{margin:32px 0 6px;line-height:1.3}
+.pp > p{margin:0 0 16px;line-height:1.75}
+.pp > ul{margin:0 0 18px;padding-left:22px;display:flex;flex-direction:column;gap:8px;line-height:1.7}
+.pp .contact-card{margin:20px 0 24px}
+
+.pp-tw{margin:22px 0 28px;border:1px solid #E5E8EF;border-radius:14px;overflow:hidden;background:#fff}
+.pp-t{width:100%;border-collapse:separate;border-spacing:0;font-size:15px;line-height:1.65;text-align:left;margin:0}
+.pp-t th{background:#F4F6FB;color:#0F172A;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:14px 22px;border-bottom:1px solid #E5E8EF;text-align:left}
+.pp-t td{padding:18px 22px;vertical-align:top;color:#475569;border-bottom:1px solid #EEF1F6;background:#fff}
+.pp-t td:first-child{color:#0F172A;font-weight:600}
+.pp-t tbody tr:nth-child(even) td{background:#FAFBFD}
+.pp-t tbody tr:last-child td{border-bottom:0}
+
+@media (max-width:640px){
+  .pp > h2[id]{margin:44px 0 14px}
+  .pp-t colgroup,.pp-t thead{display:none}
+  .pp-t,.pp-t tbody,.pp-t tr,.pp-t td{display:block;width:100%}
+  .pp-t tbody tr{padding:16px 18px;border-bottom:1px solid #E5E8EF}
+  .pp-t tbody tr:last-child{border-bottom:0}
+  .pp-t td,.pp-t tbody tr:nth-child(even) td{padding:0;border:0;background:transparent}
+  .pp-t td:first-child{margin-bottom:8px;font-size:15px}
+  .pp-t td:nth-child(2)::before{content:attr(data-label);display:block;margin-bottom:2px;font-size:11px;font-weight:700;
+    letter-spacing:.08em;text-transform:uppercase;color:#94A3B8}
+}
+`;
+
 export default function PrivacyContent() {
   return (
-    <>
+    <div className="pp">
+      <style>{css}</style>
+
       <div className="summary">
         <h2>In short</h2>
         <ul>
@@ -28,16 +175,7 @@ export default function PrivacyContent() {
 
       <h2 id="collect"><span className="no">03</span>&nbsp;&nbsp;Data we collect</h2>
       <h3>Data you give us</h3>
-      <table className="tbl2">
-        <tbody>
-          <tr><th style={{ width: '32%' }}>Situation</th><th>Data</th></tr>
-          <tr><td>Contact and estimate forms, email, calls, chat</td><td>Name, work email, phone number, company name, country, the service you are interested in, your budget range and anything you write in your message or attach.</td></tr>
-          <tr><td>Consultations and meetings</td><td>Your name, contact details, meeting notes and, only if you agree, call recordings.</td></tr>
-          <tr><td>Clients and partners</td><td>Contact and billing details, GST or tax numbers, contracts, invoices, payment records and project communications.</td></tr>
-          <tr><td>Job applications</td><td>CV, contact details, education, work history, portfolio links, expected salary, notice period and interview notes.</td></tr>
-          <tr><td>Newsletter or updates</td><td>Email address and your subscription preferences.</td></tr>
-        </tbody>
-      </table>
+      <DataTable head={['Situation', 'Data']} rows={collectRows} widths={['32%', '68%']} />
       <h3>Data collected automatically</h3>
       <p>When you visit our website we, and the tools we use, collect technical data such as your IP address, browser and device type, pages visited, referring site, approximate location (city or country) and the date and time of your visit.</p>
       <h3>Data from others</h3>
@@ -45,18 +183,7 @@ export default function PrivacyContent() {
       <p>We do not ask for, and ask you not to send us, sensitive personal data such as health information, financial account passwords or government identity numbers through our website forms.</p>
 
       <h2 id="use"><span className="no">04</span>&nbsp;&nbsp;How and why we use it</h2>
-      <table className="tbl2">
-        <tbody>
-          <tr><th style={{ width: '40%' }}>Purpose</th><th>Legal basis</th></tr>
-          <tr><td>Replying to your enquiry, preparing estimates and proposals</td><td>Your consent, given when you submit the form; under GDPR, steps taken at your request before entering a contract.</td></tr>
-          <tr><td>Delivering projects, support and maintenance; invoicing and collecting payments</td><td>Performance of our contract with you; legitimate uses permitted under the DPDP Act.</td></tr>
-          <tr><td>Keeping accounting, tax and business records</td><td>Compliance with legal obligations under Indian law.</td></tr>
-          <tr><td>Assessing job applications</td><td>Your consent, given when you apply.</td></tr>
-          <tr><td>Sending our newsletter or updates</td><td>Your consent. Every email has an unsubscribe link.</td></tr>
-          <tr><td>Measuring and improving website performance</td><td>Your consent for non-essential cookies; our legitimate interest in a secure, working website.</td></tr>
-          <tr><td>Preventing fraud, spam and misuse; protecting our legal rights</td><td>Legitimate uses permitted by law; our legitimate interests under GDPR.</td></tr>
-        </tbody>
-      </table>
+      <DataTable head={['Purpose', 'Legal basis']} rows={useRows} widths={['40%', '60%']} />
       <p>We do not sell personal data, and we do not use it for automated decisions that produce legal or similarly significant effects on you.</p>
 
       <h2 id="cookies"><span className="no">05</span>&nbsp;&nbsp;Cookies and analytics</h2>
@@ -76,16 +203,7 @@ export default function PrivacyContent() {
       <p>Our team and some service providers are based in India. If we transfer personal data outside India or the EEA, we apply appropriate safeguards — such as standard contractual clauses or transfers to countries with an adequacy decision — as required by the DPDP Act and GDPR.</p>
 
       <h2 id="retention"><span className="no">08</span>&nbsp;&nbsp;How long we keep it</h2>
-      <table className="tbl2">
-        <tbody>
-          <tr><th style={{ width: '40%' }}>Data type</th><th>Retention period</th></tr>
-          <tr><td>Enquiries that did not become a project</td><td>12 months from the last contact, unless you ask us to delete sooner.</td></tr>
-          <tr><td>Client project data, contracts, invoices</td><td>7 years after project close, to meet Indian accounting and tax obligations.</td></tr>
-          <tr><td>Job application data (unsuccessful)</td><td>6 months after notification, unless you consent to us keeping it longer.</td></tr>
-          <tr><td>Newsletter subscriber data</td><td>Until you unsubscribe.</td></tr>
-          <tr><td>Website analytics</td><td>26 months (Google Analytics default), then deleted.</td></tr>
-        </tbody>
-      </table>
+      <DataTable head={['Data type', 'Retention period']} rows={retentionRows} widths={['40%', '60%']} />
 
       <h2 id="security"><span className="no">09</span>&nbsp;&nbsp;How we protect it</h2>
       <p>We use HTTPS on all pages, limit access to personal data to staff and contractors who need it, use secure cloud providers, and require service providers to maintain appropriate security. No transmission over the internet is fully secure, but we take reasonable steps to protect your data.</p>
@@ -110,16 +228,15 @@ export default function PrivacyContent() {
       <p>For questions, requests or complaints about this policy or our privacy practices:</p>
       <div className="contact-card">
         <div>
-          <span>Email</span>
+          <span>Email: </span>
           <a href="mailto:privacy@accugile.com">privacy@accugile.com</a>
         </div>
         <div>
-          <span>Post</span>
-          <strong><span className="ph-i">[Full registered address]</span>, Coimbatore, Tamil Nadu, India</strong>
+          <span>Post: </span>
+          <strong>76-77, Nava India Rd, KR Puram Avarampalayam, Peelamedu, Coimbatore, Tamil Nadu 641006, India</strong>
         </div>
       </div>
       <p>If you are based in the EU or UK and are not satisfied with our response, you have the right to lodge a complaint with your local data protection authority. For India, the Appellate Committee under the DPDP Act will hear appeals once constituted.</p>
-    </>
+    </div>
   );
 }
-

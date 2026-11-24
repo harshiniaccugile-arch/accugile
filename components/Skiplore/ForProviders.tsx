@@ -56,15 +56,15 @@ export default function ForProviders() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '8px' }}>
               <div style={{ background: '#EEF2FF', borderRadius: '12px', padding: '12px' }}>
                 <div style={{ fontSize: '11px', color: '#1E293B', fontWeight: 700 }}>NEW BOOKINGS</div>
-                <div style={{ fontSize: '22px', fontWeight: 800 }}>[X]</div>
+                <div style={{ fontSize: '22px', fontWeight: 800 }}>1800</div>
               </div>
               <div style={{ background: '#F1F5F9', borderRadius: '12px', padding: '12px' }}>
                 <div style={{ fontSize: '11px', color: '#1E293B', fontWeight: 700 }}>MESSAGES</div>
-                <div style={{ fontSize: '22px', fontWeight: 800 }}>[X]</div>
+                <div style={{ fontSize: '22px', fontWeight: 800 }}>500</div>
               </div>
               <div style={{ background: '#E2E8F0', borderRadius: '12px', padding: '12px' }}>
                 <div style={{ fontSize: '11px', color: '#1E293B', fontWeight: 700 }}>RATING</div>
-                <div style={{ fontSize: '22px', fontWeight: 800 }}>[X.X] / 5</div>
+                <div style={{ fontSize: '22px', fontWeight: 800 }}>4.8 / 5</div>
               </div>
             </div>
             <div className="drow">

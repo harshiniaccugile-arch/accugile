@@ -40,7 +40,7 @@ export default function SkiplorePage() {
           <SkiploreFaq />
           <BuiltByAccugileMarketplace />
           <SkiploreCTA />
-          <SkiploreTrialBar />
+
         </main>
       </div>
     </PageShell>

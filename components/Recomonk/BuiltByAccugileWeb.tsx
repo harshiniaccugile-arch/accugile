@@ -27,7 +27,7 @@ export default function BuiltByAccugileWeb() {
               Fast WordPress builds, deep category structures, Amazon product blocks with deal badges, wishlists, social login and SEO-ready buying guides.
             </p>
           </div>
-          <Link href="/services/website-development" className="btn btn-ghost">
+          <Link href="/website-development" className="btn btn-ghost">
             Explore website development →
           </Link>
         </div>

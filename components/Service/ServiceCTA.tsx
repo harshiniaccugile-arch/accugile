@@ -24,7 +24,7 @@ export default function ServiceCTA() {
                     </div>
                     <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                         <Link href="/contact" className="btn btn-ac">Request a proposal</Link>
-                        <Link href="/about" className="btn btn-ghost">About Accugile</Link>
+
                     </div>
                 </div>
             </div>

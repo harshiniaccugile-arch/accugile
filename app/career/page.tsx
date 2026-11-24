@@ -29,8 +29,7 @@ export default function CareersPage() {
                 <WhyAccugile />
                 <OpenRoles />
                 <HiringProcess />
-                <Benefits />
-                <LifeAtAccugile />
+
                 <CareersFaq />
                 <CareersCTA />
             </main>

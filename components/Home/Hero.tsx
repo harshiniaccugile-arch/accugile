@@ -52,7 +52,7 @@ export default function Hero() {
                     </p>
                     <div className="rise rise4" style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                         <a href="#contact" className="btn btn-ac">Book a free consultation <Arrow /></a>
-                        <a href="#work" className="btn btn-ghost">See our work</a>
+
                     </div>
                 </div>
 

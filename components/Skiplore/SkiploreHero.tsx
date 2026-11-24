@@ -148,7 +148,7 @@ export default function SkiploreHero() {
                   <span>
                     <small>from</small>
                     <br />
-                    <strong>₹[X,XXX]</strong> <small>/ person</small>
+                    <strong>₹2,500</strong> <small>/ person</small>
                   </span>
                   <span className="badge b-lim">Few spots left</span>
                 </div>

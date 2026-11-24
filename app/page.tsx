@@ -12,6 +12,7 @@ import Engagement from '@/components/Home/Engagement';
 import Testimonials from '@/components/Home/Testimonials';
 import Contact from '@/components/Home/Contact';
 import Footer from '@/components/Footer';
+import { LogoMarquee } from '@/components/Home/Marquee';
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       <AISection />
       <Products />
       <TechStack />
+      <LogoMarquee />
       <Engagement />
       <Process />
 

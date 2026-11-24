@@ -48,7 +48,7 @@ export default function AdorackCTA() {
             >
               Start your free trial
             </a>
-            <a
+            {/* <a
               href="https://app.adorack.com/login/"
               target="_blank"
               rel="noopener noreferrer"
@@ -61,7 +61,7 @@ export default function AdorackCTA() {
               }}
             >
               Sign in
-            </a>
+            </a> */}
           </div>
           <div className="trialnote" style={{ justifyContent: 'center', color: '#B6C0D2' }}>
             <span>No credit card</span>

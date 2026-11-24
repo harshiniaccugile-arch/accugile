@@ -27,7 +27,7 @@ export default function BuiltByAccugile() {
               Multi-tenant workspaces, eight platform API integrations, queue-based publishing and subscription billing: we run all of it in production every day.
             </p>
           </div>
-          <Link href="/services/saas-development" className="btn btn-ghost">
+          <Link href="/saas-development" className="btn btn-ghost">
             Explore SaaS development →
           </Link>
         </div>

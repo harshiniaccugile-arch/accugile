@@ -37,9 +37,9 @@ export default function AdorackHero() {
                                 <path d="M2 7 H12 M8 3 L12 7 L8 11" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </a>
-                        <a href="https://app.adorack.com/login/" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ fontSize: 16, padding: '16px 26px' }}>
+                        {/* <a href="https://app.adorack.com/login/" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ fontSize: 16, padding: '16px 26px' }}>
                             Sign in to Adorack
-                        </a>
+                        </a> */}
                     </div>
                     <div className="trialnote rise rise4" style={{ justifyContent: 'center' }}>
                         <span>No credit card required</span>

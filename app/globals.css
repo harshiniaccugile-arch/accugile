@@ -2209,45 +2209,110 @@ details.faq p {
 
 /* sticky trial bar */
 .trialbar {
-  position: fixed;
-  left: 50%;
-  bottom: 18px;
-  transform: translate(-50%, 140%);
-  z-index: 60;
-  background: #0F172A;
-  color: #FFFFFF;
-  border-radius: 16px;
-  padding: 10px 10px 10px 20px;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  box-shadow: 0 30px 60px -20px rgba(15, 23, 42, .6);
-  transition: transform .35s cubic-bezier(.2, .8, .2, 1);
-  width: max-content;
-  max-width: calc(100% - 24px);
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 24px !important;
+  transform: translate(-50%, 140%) !important;
+  z-index: 999999 !important;
+  pointer-events: none;
+  background: #0B1120 !important;
+  color: #FFFFFF !important;
+  border-radius: 9999px !important;
+  padding: 8px 10px 8px 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1), opacity .3s ease !important;
+  width: max-content !important;
+  max-width: calc(100% - 32px) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  opacity: 0;
 }
 
 .trialbar.show {
-  transform: translate(-50%, 0);
+  transform: translate(-50%, 0) !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+}
+
+.trialbar * {
+  pointer-events: auto;
 }
 
 .trialbar span {
-  font-size: 14px;
+  font-size: 14px !important;
+  color: #94A3B8 !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  user-select: none;
+}
+
+.trialbar span strong {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
 }
 
 .trialbar a.btn {
-  min-height: 44px;
-  padding: 10px 18px;
-  font-size: 14px;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  background: #304DDB !important;
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  padding: 10px 22px !important;
+  border-radius: 9999px !important;
+  min-height: 42px !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  box-shadow: 0 4px 14px 0 rgba(48, 77, 219, 0.45) !important;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.trialbar a.btn:hover {
+  background: #253ec0 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(48, 77, 219, 0.6) !important;
+}
+
+.trialbar a.btn:active {
+  transform: translateY(0) !important;
+}
+
+.trialbar a.trialbar-sublink {
+  color: #CBD5E1 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  padding: 6px 12px !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  transition: color 0.2s ease !important;
+}
+
+.trialbar a.trialbar-sublink:hover {
+  color: #FFFFFF !important;
+  text-decoration: underline !important;
 }
 
 @media (max-width: 640px) {
-  .trialbar span {
-    display: none;
+  .trialbar {
+    padding: 6px 8px 6px 16px !important;
+    bottom: 16px !important;
+    gap: 10px !important;
   }
 
-  .trialbar {
-    padding: 8px;
+  .trialbar span {
+    display: none !important;
   }
 }
 
@@ -4106,10 +4171,10 @@ details.faq p{color:#475569;line-height:1.7;margin-top:10px;max-width:860px}
 .cs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px;align-items:stretch}
 .cscard{position:relative;background:#FFFFFF;border:1px solid #E5E8EF;border-radius:20px;overflow:hidden;color:#0F172A;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;text-decoration:none}
 .cscard:hover{color:#0F172A;transform:translateY(-6px);box-shadow:0 30px 60px -28px rgba(15,23,42,.22);border-color:#CBD5E1}
-.cscard .cs-card-thumb{width:100%;height:200px;overflow:hidden;background:#F8FAFC;position:relative;border-bottom:1px solid #EEF2F6}
+.cscard .cs-card-thumb{width:100%;height:220px;overflow:hidden;background:#F8FAFC;position:relative}
 .cscard .cs-card-thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .5s ease}
 .cscard:hover .cs-card-thumb img{transform:scale(1.04)}
-.cscard .top{background:#0B1020;color:#FFFFFF;padding:22px 24px;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.06)}
+.cscard .top{background:#0B1020;color:#FFFFFF;padding:18px 22px;position:relative;margin-top:-64px;border-radius:16px 16px 0 0;z-index:2;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.06)}
 .cscard .top:after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;border:1px dashed rgba(255,255,255,.15);pointer-events:none}
 .cscard .top .row{display:flex;justify-content:flex-start;align-items:center;gap:10px}
 .cscard .top b{width:36px;height:36px;border-radius:10px;background:var(--tone);display:inline-flex;align-items:center;justify-content:center;font-family:"Plus Jakarta Sans",sans-serif;font-size:16px;font-weight:700}

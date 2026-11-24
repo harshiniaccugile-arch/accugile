@@ -17,9 +17,7 @@ export default function Departments() {
                 <div className="grid g3">
                     {departments.map(([bg, count, h, p]) => (
                         <div key={h} className="box" style={{ background: bg, borderColor: 'transparent' }}>
-                            <span style={{ alignSelf: 'flex-start', fontSize: 13, fontWeight: 600, background: 'rgba(255,255,255,.8)', borderRadius: 999, padding: '4px 10px' }}>
-                                {count}
-                            </span>
+
                             <h3>{h}</h3>
                             <p>{p}</p>
                         </div>

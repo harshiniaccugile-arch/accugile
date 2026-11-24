@@ -2,48 +2,33 @@
 
 import React, { useEffect, useState } from 'react';
 
+const Arrow = () => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+    <path d="M2 7 H12 M8 3 L12 7 L8 11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 export default function TrialBar() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const hero = document.getElementById('top');
-    const pricing = document.getElementById('pricing');
-
-    if (!hero || !('IntersectionObserver' in window)) return;
-
-    let heroOut = false;
-    let pricingIn = false;
-
-    const updateVisibility = () => {
-      setVisible(heroOut && !pricingIn);
+    const handleScroll = () => {
+      const scrollPos = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      setVisible(scrollPos > 250);
     };
 
-    const heroObserver = new IntersectionObserver(
-      (entries) => {
-        heroOut = !entries[0].isIntersecting;
-        updateVisibility();
-      },
-      { threshold: 0.05 }
-    );
-    heroObserver.observe(hero);
-
-    let pricingObserver: IntersectionObserver | null = null;
-    if (pricing) {
-      pricingObserver = new IntersectionObserver(
-        (entries) => {
-          pricingIn = entries[0].isIntersecting;
-          updateVisibility();
-        },
-        { threshold: 0.1 }
-      );
-      pricingObserver.observe(pricing);
-    }
-
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    document.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
-      heroObserver.disconnect();
-      if (pricingObserver) pricingObserver.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.stopPropagation();
+  };
 
   return (
     <div className={`trialbar ${visible ? 'show' : ''}`} aria-hidden={!visible}>
@@ -54,8 +39,9 @@ export default function TrialBar() {
         href="https://app.adorack.com/login/"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ color: '#B6C0D2', fontSize: '14px', fontWeight: 600 }}
+        className="trialbar-sublink"
         tabIndex={visible ? 0 : -1}
+        onClick={handleClick}
       >
         Sign in
       </a>
@@ -65,10 +51,14 @@ export default function TrialBar() {
         rel="noopener noreferrer"
         className="btn btn-ac"
         tabIndex={visible ? 0 : -1}
+        onClick={handleClick}
       >
-        Start free trial
+        <span>Start free trial</span>
+        <Arrow />
       </a>
     </div>
   );
 }
+
+
 
