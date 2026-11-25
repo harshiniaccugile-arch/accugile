@@ -1,3 +1,5 @@
+import ContactForm from '@/components/Contact/ContactForm';
+
 const points = [
     'Free consultation and NDA on request',
     'A project lead, designer and senior engineer on the first call',
@@ -25,24 +27,7 @@ export default function Contact() {
                     </div>
                 </div>
 
-                <form style={{ flex: '1 1 480px', minWidth: 0, background: '#fff', color: '#0F172A', borderRadius: 24, padding: 36, boxShadow: '0 40px 80px -40px rgba(48,77,219,0.4)', display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 18 }}>
-                    <label className="field">Full name<input type="text" placeholder="Jane Smith" /></label>
-                    <label className="field">Work email<input type="email" placeholder="jane@company.com" /></label>
-                    <label className="field">Service
-                        <select>
-                            <option>Website Development</option><option>eCommerce Solutions</option><option>SaaS Development</option>
-                            <option>AI Chatbot / Voicebot</option><option>Digital Marketing &amp; Branding</option><option>Something else</option>
-                        </select>
-                    </label>
-                    <label className="field">Budget
-                        <select><option>[Under $5k]</option><option>[$5k to $20k]</option><option>[$20k to $50k]</option><option>[$50k+]</option></select>
-                    </label>
-                    <label className="field" style={{ gridColumn: '1 / -1' }}>Tell us about your project
-                        <textarea rows={4} placeholder="What are you building, and by when?" />
-                    </label>
-                    <button type="button" className="btn btn-ac" style={{ gridColumn: '1 / -1', justifyContent: 'center', fontSize: 16, minHeight: 54 }}>Send my enquiry</button>
-                    <p style={{ gridColumn: '1 / -1', fontSize: 13, color: '#5B6474', textAlign: 'center' }}>We reply within one business day. Your details stay private.</p>
-                </form>
+                <ContactForm />
             </div>
         </section>
     );
