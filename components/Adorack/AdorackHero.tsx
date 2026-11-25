@@ -51,9 +51,14 @@ export default function AdorackHero() {
                 </div>
 
                 {/* Product mockup */}
-                <div className="rise rise4" style={{ position: 'relative', margin: '56px auto 0', maxWidth: 1180 }}>
+                <div className="rise rise4" style={{ position: 'relative', margin: '40px auto 0', maxWidth: 1180, width: '100%' }}>
                     <div className="app" role="img" aria-label="Adorack dashboard showing a weekly content calendar and the post composer with the AI assistant">
-                        <div className="app-top"><i></i><i></i><i></i><span className="app-url">app.adorack.com/calendar</span></div>
+                        <div className="app-top">
+                            <span style={{ display: 'inline-flex', gap: 6, flexShrink: 0 }}>
+                                <i></i><i></i><i></i>
+                            </span>
+                            <span className="app-url">app.adorack.com/calendar</span>
+                        </div>
                         <div className="app-body">
                             <aside className="app-side" aria-hidden="true">
                                 <div className="ws"><i></i>Brightwave Agency</div>
@@ -82,15 +87,17 @@ export default function AdorackHero() {
                                         <span className="post k4" style={{ flexDirection: 'row', padding: '4px 8px' }}>Events</span>
                                     </div>
                                 </div>
-                                <div className="cal">
-                                    <div className="d">Mon</div><div className="d">Tue</div><div className="d">Wed</div><div className="d">Thu</div><div className="d">Fri</div><div className="d">Sat</div><div className="d">Sun</div>
-                                    <div className="c"><div className="post k1">New blog: 5 reel ideas<small><i className="li"></i>10:00</small></div><div className="post k3">Summer sale is live<small><i className="ig"></i>18:30</small></div></div>
-                                    <div className="c"><div className="post k2">Feature drop: dark mode<small><i className="fb"></i>09:00</small></div></div>
-                                    <div className="c today"><div className="post k3 drop">20% off this weekend<small><i className="tt"></i>12:00</small></div><div className="post k1">Behind the scenes<small><i className="th"></i>16:00</small></div></div>
-                                    <div className="c"><div className="post k4">Live Q&amp;A at 5 pm<small><i className="yt"></i>11:00</small></div></div>
-                                    <div className="c"><div className="post k2">Pin: summer lookbook<small><i className="pi"></i>08:30</small></div><div className="post k1">Team spotlight<small><i className="bs"></i>15:00</small></div></div>
-                                    <div className="c"><div className="post k3">Last day of the sale<small><i className="ig"></i>10:00</small></div></div>
-                                    <div className="c"></div>
+                                <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', width: '100%' }}>
+                                    <div className="cal">
+                                        <div className="d">Mon</div><div className="d">Tue</div><div className="d">Wed</div><div className="d">Thu</div><div className="d">Fri</div><div className="d">Sat</div><div className="d">Sun</div>
+                                        <div className="c"><div className="post k1">New blog: 5 reel ideas<small><i className="li"></i>10:00</small></div><div className="post k3">Summer sale is live<small><i className="ig"></i>18:30</small></div></div>
+                                        <div className="c"><div className="post k2">Feature drop: dark mode<small><i className="fb"></i>09:00</small></div></div>
+                                        <div className="c today"><div className="post k3 drop">20% off this weekend<small><i className="tt"></i>12:00</small></div><div className="post k1">Behind the scenes<small><i className="th"></i>16:00</small></div></div>
+                                        <div className="c"><div className="post k4">Live Q&amp;A at 5 pm<small><i className="yt"></i>11:00</small></div></div>
+                                        <div className="c"><div className="post k2">Pin: summer lookbook<small><i className="pi"></i>08:30</small></div><div className="post k1">Team spotlight<small><i className="bs"></i>15:00</small></div></div>
+                                        <div className="c"><div className="post k3">Last day of the sale<small><i className="ig"></i>10:00</small></div></div>
+                                        <div className="c"></div>
+                                    </div>
                                 </div>
                             </div>
                             <div className="app-comp" aria-hidden="true">
@@ -120,7 +127,7 @@ export default function AdorackHero() {
                                     <div className="ln ln3" style={{ color: 'var(--ac)' }}>#SummerSale #ShopSmall #NewArrivals</div>
                                 </div>
                                 <span className="aibtn">✦ Generated with Adorack AI</span>
-                                <div style={{ display: 'flex', gap: 8, alignItems: 'center', fontSize: 11.5, color: '#475569' }}>
+                                <div style={{ display: 'flex', gap: 8, alignItems: 'center', fontSize: 11.5, color: '#475569', flexWrap: 'wrap' }}>
                                     <span style={{ border: '1px solid #E5E8EF', borderRadius: 8, padding: '6px 8px', background: '#FFFFFF' }}>Wed · 12:00 PM</span>
                                     <span>Needs approval</span>
                                 </div>

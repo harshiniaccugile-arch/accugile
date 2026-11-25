@@ -14,19 +14,19 @@ const quotes = [
         country: 'Product Lead, Tidewater Social Pte Ltd, Singapore', // replace with the real country
     },
     {
-        bg: '#FDEEE4',
+        bg: '#e7f1ff',
         q: '“We wanted a peer-to-peer fashion resale marketplace with the feel of the best social shopping apps. Accugile built seller profiles, easy listing with photos, offers, in-app chat, and split payments with automatic payouts. They also thought about trust and safety, with reporting tools and review systems. We launched with a few thousand sellers and the platform held up beautifully.”',
         name: 'Chloé Dubois', // replace with the real reviewer
         country: 'Co-founder, Seconde Vie Mode SAS, Lyon, France', // replace with the real country
     },
     {
-        bg: '#FDEEE4',
+        bg: '#F3EEFF',
         q: '“We needed a bilingual Arabic and English store with right-to-left layouts, local payment gateways, and cash on delivery. Accugile handled all of it and made the mobile experience excellent. Our conversion rate rose by 28% after launch, and the store coped well during our biggest sale of the year.”',
         name: 'Fatima Al-Zahrani', // replace with the real reviewer
         country: 'Co-founder, Najd Home Living Co., Riyadh, Saudi Arabia', // replace with the real country
     },
     {
-        bg: '#FDEEE4',
+        bg: '#FCEFF5',
         q: '“We run technical courses for working professionals and needed selling, learning, and certificates on one WordPress site. Accugile set up a learning management system integrated with WooCommerce, with course bundles, drip content, quizzes, and automatic certificates. Enrollment is now fully automated, and our admin workload has dropped dramatically.”',
         name: 'Priyanka Deshmukh', // replace with the real reviewer
         country: 'Director, Sahyadri Skill Academy Pvt Ltd, Pune, India', // replace with the real country

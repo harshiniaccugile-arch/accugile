@@ -3,7 +3,7 @@ import { techGroups } from '@/lib/data';
 
 export default function TechStack() {
     return (
-        <section id="stack" style={{ padding: '120px 0', background: '#F7F8FB' }}>
+        <section id="stack" style={{ padding: '30px 0', background: '#F7F8FB' }}>
             <div className="wrap">
                 <div style={{ maxWidth: 760, marginBottom: 56 }}>
                     <div className="eyebrow" style={{ marginBottom: 16 }}>Technology</div>

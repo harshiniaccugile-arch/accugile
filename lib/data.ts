@@ -144,6 +144,6 @@ export const footerCols = [
     ['AI', [['/ai-ml', 'AI/ML'], ['/generative-ai', 'Generative AI'], ['/enterprise-ai', 'Enterprise AI'], ['/ai-chatbot', 'AI Chatbot'], ['/ai-voicebot', 'AI Voicebot'], ['/automated-workflows', 'Automated Workflows']]],
     ['Services', [['/software-development', 'Software Development'], ['/saas-development', 'SaaS Development'], ['/website-development', 'Website Development'], ['/ecommerce-solutions', 'eCommerce Solutions'], ['/cloud-solutions', 'Cloud Solutions'], ['/digital-marketing-branding', 'Digital Marketing'], ['/services', 'All services']]],
     ['Technology', [['/shopify-plus', 'Shopify Plus'], ['/woocommerce', 'WooCommerce'], ['/magento', 'Magento'], ['/php-frameworks', 'PHP Frameworks'], ['/mern', 'MERN / MEAN'], ['/reactjs', 'ReactJS / NextJS'], ['/technology', 'All technologies']]],
-    ['Company', [['/about', 'About Us'], ['/team', 'Our Team'], ['/partners-awards', 'Partners & Awards'], ['/career', 'Careers'], ['/case-studies', 'Case Studies']]],
+    ['Company', [['/about', 'About Us'], ['/team', 'Our Team'], ['/career', 'Careers'], ['/case-studies', 'Case Studies']]],
     ['Products', [['/adorack', 'Adorack'], ['/skiplore', 'Skiplore'], ['/recomonk', 'Recomonk']]],
 ] as const;

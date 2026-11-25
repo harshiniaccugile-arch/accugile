@@ -48,6 +48,23 @@ function LinkGrid({ title, links, promo, onNavigate }: { title: string; links: I
     );
 }
 
+type Child = { label: string; href: string };
+const mobileSections: { key: string; label: string; href: string; children: Child[] }[] = [
+    { key: 'ai', label: 'AI', href: '/ai', children: aiLinks.map((l) => ({ label: l.title, href: l.href })) },
+    { key: 'services', label: 'Services', href: '/services', children: serviceLinks.map((l) => ({ label: l.title, href: l.href })) },
+    { key: 'tech', label: 'Technology', href: '/technology', children: techGroups.flatMap((g) => g.items.map(([href, label]) => ({ label, href }))) },
+    { key: 'products', label: 'Products', href: '/products', children: products.map((p) => ({ label: p.name, href: p.href })) },
+    { key: 'cases', label: 'Case Studies', href: '/case-studies', children: [] },
+    {
+        key: 'company', label: 'Company', href: '/about', children: [
+            { label: 'About Us', href: '/about' },
+            { label: 'Our Team', href: '/#team' },
+            { label: 'Partners & Awards', href: '/partners-awards' },
+            { label: 'Careers', href: '/careers' },
+        ],
+    },
+];
+
 export default function Header() {
     const pathname = usePathname();
     const router = useRouter();
@@ -57,6 +74,7 @@ export default function Header() {
     const stackHref = isHome ? '#stack' : '/technology';
     const [open, setOpen] = useState<string | null>(null);
     const [mobile, setMobile] = useState(false);
+    const [mobileOpen, setMobileOpen] = useState<string | null>(null);
     const ref = useRef<HTMLElement>(null);
     const canHover = () => typeof window !== 'undefined' && window.matchMedia('(hover:hover)').matches;
 
@@ -115,7 +133,7 @@ export default function Header() {
                         Contact Us <Arrow />
                     </a>
                     <button className="navbtn burger" aria-expanded={mobile} aria-label="Open menu"
-                        onClick={() => { setMobile((m) => !m); setOpen(null); }}
+                        onClick={() => { setMobile((m) => !m); setOpen(null); setMobileOpen(null); }}
                         style={{ width: 44, justifyContent: 'center', padding: 10 }}>
                         <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 7 H20 M4 12 H20 M4 17 H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -237,14 +255,47 @@ export default function Header() {
 
             {/* Mobile */}
             {mobile && (
-                <div className="mega" style={{ borderTop: '1px solid #E5E8EF', background: '#fff', padding: '12px 20px 24px' }}>
+                <div className="mega" style={{ borderTop: '1px solid #E5E8EF', background: '#fff', padding: '12px 20px 24px', maxHeight: 'calc(100vh - 140px)', overflowY: 'auto' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        {mobileLinks.map(([href, label]) => (
-                            <L key={href} href={href} onClick={() => setMobile(false)} style={{ color: '#0F172A', fontWeight: 600, fontSize: 18, padding: '14px 4px', borderBottom: '1px solid #EEF1F5', display: 'flex', justifyContent: 'space-between' }}>
-                                {label}<span style={{ color: '#5B6474' }}>›</span>
-                            </L>
-                        ))}
-                        <a href="#contact" onClick={() => setMobile(false)} className="btn btn-ac" style={{ marginTop: 16, justifyContent: 'center' }}>Contact Us</a>
+                        {mobileSections.map((s) => {
+                            const expanded = mobileOpen === s.key;
+                            const closeAll = () => { setMobile(false); setMobileOpen(null); };
+                            if (!s.children.length) {
+                                return (
+                                    <L key={s.key} href={s.href} onClick={closeAll}
+                                        style={{ color: '#0F172A', fontWeight: 600, fontSize: 18, padding: '14px 4px', borderBottom: '1px solid #EEF1F5', display: 'flex', justifyContent: 'space-between' }}>
+                                        {s.label}<span style={{ color: '#5B6474' }}>›</span>
+                                    </L>
+                                );
+                            }
+                            return (
+                                <div key={s.key} style={{ borderBottom: '1px solid #EEF1F5' }}>
+                                    <button type="button" aria-expanded={expanded}
+                                        onClick={() => setMobileOpen(expanded ? null : s.key)}
+                                        style={{ width: '100%', background: 'none', border: 0, cursor: 'pointer', color: '#0F172A', fontWeight: 600, fontSize: 18, padding: '14px 4px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left' }}>
+                                        {s.label}
+                                        <svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"
+                                            style={{ transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform .2s', color: '#5B6474' }}>
+                                            <path d="M3 4.5 L6 7.5 L9 4.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                                        </svg>
+                                    </button>
+                                    {expanded && (
+                                        <div style={{ display: 'flex', flexDirection: 'column', padding: '0 0 10px 12px' }}>
+                                            <L href={s.href} onClick={closeAll} style={{ color: '#0E7A4B', fontWeight: 600, fontSize: 15, padding: '10px 4px' }}>
+                                                All {s.label} →
+                                            </L>
+                                            {s.children.map((c) => (
+                                                <L key={c.href + c.label} href={c.href} onClick={closeAll}
+                                                    style={{ color: '#334155', fontSize: 16, padding: '10px 4px' }}>
+                                                    {c.label}
+                                                </L>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
+                        <a href="#contact" onClick={() => { setMobile(false); setMobileOpen(null); }} className="btn btn-ac" style={{ marginTop: 16, justifyContent: 'center' }}>Contact Us</a>
                     </div>
                 </div>
             )}

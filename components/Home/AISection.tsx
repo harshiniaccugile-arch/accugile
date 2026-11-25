@@ -4,6 +4,39 @@ import { aiLinks } from '@/lib/data';
 const flowBox = { background: '#F7F8FB', border: '1px solid #E5E8EF', borderRadius: 12, padding: '12px 14px', fontSize: 13, fontWeight: 600, flexShrink: 0 } as const;
 const line = { flex: 1, height: 2, background: '#E5E8EF', position: 'relative', margin: '0 6px' } as const;
 
+const flowCss = `
+@keyframes travelY {
+    0%   { transform: translateY(0); opacity: 0; }
+    15%  { opacity: 1; }
+    85%  { opacity: 1; }
+    100% { transform: translateY(28px); opacity: 0; }
+}
+
+@media (max-width: 640px) {
+    .flow-row {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+    .flow-row > div:not(.flow-line) {
+        width: 100% !important;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .flow-row > .flow-line {
+        flex: none !important;
+        width: 2px !important;
+        height: 36px !important;
+        margin: 0 !important;
+        align-self: center;
+    }
+    .flow-row > .flow-line .traveler {
+        left: -3px !important;
+        top: 0 !important;
+        animation-name: travelY !important;
+    }
+}
+`;
+
 export default function AISection() {
     return (
         <section id="ai" style={{ background: 'linear-gradient(160deg, #F3EEFF 0%, #EEF2FF 45%, #EFFAF5 100%)', padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
@@ -48,14 +81,15 @@ export default function AISection() {
 
                         <div style={{ background: '#fff', border: '1px solid #E5E8EF', borderRadius: 20, padding: 24 }}>
                             <div style={{ fontSize: 12, color: '#5B6474', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 22 }}>Automated workflow</div>
-                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <div className="flow-row" style={{ display: 'flex', alignItems: 'center' }}>
                                 <div style={flowBox}>Lead captured</div>
-                                <div style={line}><span className="traveler" /><span className="traveler t2" /></div>
+                                <div className="flow-line" style={line}><span className="traveler" /><span className="traveler t2" /></div>
                                 <div style={{ ...flowBox, background: 'var(--ac)', color: '#fff', border: 'none', fontWeight: 700 }}>AI qualifies</div>
-                                <div style={line}><span className="traveler" /><span className="traveler t2" /></div>
+                                <div className="flow-line" style={line}><span className="traveler" /><span className="traveler t2" /></div>
                                 <div style={flowBox}>CRM + WhatsApp</div>
                             </div>
                         </div>
+                        <style>{flowCss}</style>
                     </div>
                 </div>
             </div>

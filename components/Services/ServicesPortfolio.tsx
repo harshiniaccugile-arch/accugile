@@ -62,6 +62,18 @@ const services = [
         desc: 'We design, migrate and operate cloud infrastructure that is secure, cost-efficient and resilient, supported by modern DevOps practices.',
         href: '/cloud-solutions',
     },
+    {
+        num: '11',
+        title: 'Salesforce Consultation & CRM Engineering',
+        desc: 'We help growing businesses and enterprises design, customise and scale Salesforce to drive revenue, automate workflows and create seamless customer experiences.',
+        href: '/salesforce-consultation',
+    },
+    {
+        num: '12',
+        title: 'AWS Cloud Consultation & Architecture',
+        desc: 'We architect, migrate, optimise and manage high-availability infrastructure on Amazon Web Services, helping businesses achieve elasticity, security and cost efficiency.',
+        href: '/aws-consultation',
+    },
 ];
 
 export default function ServicesPortfolio() {

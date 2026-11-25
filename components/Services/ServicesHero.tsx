@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const overview = [
-    ['Practice areas', '10'],
+    ['Practice areas', '12'],
     ['Delivery', '100% in-house teams'],
     ['Engagement models', 'Fixed-scope, dedicated developer, dedicated team'],
     ['Contractual', 'NDA before discovery, full IP assignment'],
